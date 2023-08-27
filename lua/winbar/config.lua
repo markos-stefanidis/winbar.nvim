@@ -1,7 +1,7 @@
 local M = {}
 
 M.defaults = {
-    enabled = false,
+    enabled = true,
 
     show_file_path = true,
     show_symbols = true,
@@ -15,7 +15,7 @@ M.defaults = {
     icons = {
         file_icon_default = '',
         seperator = '>',
-        editor_state = '●',
+        editor_state = ' ●',
         lock_icon = '',
     },
 
