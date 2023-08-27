@@ -34,6 +34,7 @@ local winbar_file = function()
 
     if not f.isempty(filename) then
         local default = false
+        local modified = vim.api.nvim_eval_statusline('%M', {}).str == '+' and opts.icons.editor_state or ''
 
         if f.isempty(file_type) then
             file_type = ''
@@ -63,7 +64,7 @@ local winbar_file = function()
             end
         end
         value = value .. file_icon
-        value = value .. '%#' .. hl_winbar_file .. '#' .. filename .. '%*'
+        value = value .. '%#' .. hl_winbar_file .. '#' .. filename .. '%*' .. modified
     end
 
     return value
